@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Github, Mail, Phone, MapPin, ExternalLink, Code2, Database, Layout, Terminal, Briefcase, User, ChevronDown, Menu, X } from 'lucide-react';
+import { Mail, Phone, MapPin, Code2, Database, Layout, ChevronDown, Menu, X } from 'lucide-react';
 
 // --- Component hỗ trợ hiệu ứng xuất hiện khi cuộn (Scroll Reveal) ---
 const Reveal = ({ children, delay = 0, direction = 'up' }) => {
@@ -103,7 +103,7 @@ const PORTFOLIO_DATA = {
   ]
 };
 
-export default function Portfolio() {
+export default function App() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -382,7 +382,9 @@ export default function Portfolio() {
               </p>
               
               <a 
-                href={`mailto:${PORTFOLIO_DATA.contact.email}`}
+                href={`https://mail.google.com/mail/?view=cm&fs=1&to=${PORTFOLIO_DATA.contact.email}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-8 py-4 border-2 border-cyan-500 text-cyan-400 rounded-md font-bold hover:bg-cyan-500/10 transition-colors"
               >
                 <Mail size={20} />
