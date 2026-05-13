@@ -1,5 +1,18 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Mail, Phone, MapPin, Code2, Database, Layout, ChevronDown, Menu, X, Github, Facebook } from 'lucide-react';
+import { Mail, Phone, MapPin, Code2, Database, Layout, ChevronDown, Menu, X } from 'lucide-react';
+
+// --- Các Icon tự định nghĩa để tránh lỗi thư viện ---
+const GithubIcon = ({ size = 24, className = "" }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.02c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A4.8 4.8 0 0 0 8 18v4"></path>
+  </svg>
+);
+
+const FacebookIcon = ({ size = 24, className = "" }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+  </svg>
+);
 
 // --- Component hỗ trợ hiệu ứng xuất hiện khi cuộn (Scroll Reveal) ---
 const Reveal = ({ children, delay = 0, direction = 'up' }) => {
@@ -396,7 +409,7 @@ export default function App() {
                       {project.github && (
                         <div className={`flex ${index % 2 === 0 ? 'md:justify-end' : 'md:justify-start'}`}>
                           <a href={project.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors text-sm font-bold bg-cyan-500/10 px-4 py-2 rounded-full border border-cyan-500/20">
-                            <Github size={16} /> Xem Source Code
+                            <GithubIcon size={16} /> Xem Source Code
                           </a>
                         </div>
                       )}
@@ -443,10 +456,10 @@ export default function App() {
               {/* Mạng Xã Hội */}
               <div className="flex justify-center items-center gap-6 mt-8">
                 <a href={PORTFOLIO_DATA.contact.github} target="_blank" rel="noopener noreferrer" className="p-3 bg-neutral-900 border border-neutral-800 rounded-full hover:border-cyan-400 hover:text-cyan-400 transition-colors">
-                  <Github size={24} />
+                  <GithubIcon size={24} />
                 </a>
                 <a href={PORTFOLIO_DATA.contact.facebook} target="_blank" rel="noopener noreferrer" className="p-3 bg-neutral-900 border border-neutral-800 rounded-full hover:border-cyan-400 hover:text-cyan-400 transition-colors">
-                  <Facebook size={24} />
+                  <FacebookIcon size={24} />
                 </a>
               </div>
             </Reveal>
