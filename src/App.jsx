@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Mail, Phone, MapPin, Code2, Database, Layout, ChevronDown, Menu, X } from 'lucide-react';
+import { Mail, Phone, MapPin, Code2, Database, Layout, ChevronDown, Menu, X, Github, Facebook } from 'lucide-react';
 
 // --- Component hỗ trợ hiệu ứng xuất hiện khi cuộn (Scroll Reveal) ---
 const Reveal = ({ children, delay = 0, direction = 'up' }) => {
@@ -43,22 +43,23 @@ const Reveal = ({ children, delay = 0, direction = 'up' }) => {
   );
 };
 
-// --- Dữ liệu Portfolio ---
+// --- Dữ liệu Portfolio Cập Nhật ---
 const PORTFOLIO_DATA = {
   name: "Tống Xuân Thọ",
-  role: "Intern Developer",
-  tagline: "Kiến tạo trải nghiệm mượt mà qua từng dòng code.",
-  about: "Xin chào, tôi là một Lập trình viên đam mê công nghệ và giải quyết vấn đề. Hiện tôi đang theo học chuyên ngành Lập trình máy tính tại Hanoi Vocational College of Technology (GPA: 3.4/4.0). Định hướng của tôi là trở thành một Full-stack Developer chuyên nghiệp, luôn sẵn sàng đón nhận những thách thức công nghệ mới.",
+  role: "Intern Backend Developer",
+  tagline: "Kiến tạo hệ thống mạnh mẽ, bảo mật và tối ưu hiệu suất.",
+  about: "Xin chào, tôi là một Lập trình viên đam mê phát triển các hệ thống Back-end. Hiện tôi đang theo học chuyên ngành Lập trình máy tính tại Hanoi Vocational College of Technology (GPA: 3.4/4.0). Với thế mạnh về tư duy logic và kiến thức nền tảng vững chắc về Database, API, tôi định hướng trở thành một Backend Developer chuyên nghiệp, luôn sẵn sàng giải quyết các bài toán dữ liệu phức tạp.",
   contact: {
-    phone: "0967.715.3933",
+    phone: "0967.153.933",
     email: "tongthobro456@gmail.com",
     location: "Hà Nội, Việt Nam",
-    github: "#"
+    github: "https://github.com/xuanthotong",
+    facebook: "https://www.facebook.com/tongtho308"
   },
   skills: [
-    { category: "Ngôn Ngữ", icon: <Code2 size={24}/>, items: ["JavaScript (ES6+)", "C#", "HTML5", "CSS3"] },
-    { category: "Frameworks", icon: <Layout size={24}/>, items: ["ReactJS", "Node.js", "ExpressJS", "Tailwind CSS"] },
-    { category: "Database & Tools", icon: <Database size={24}/>, items: ["MongoDB", "MySQL", "SQL Server", "RESTful API", "Postman", "Git / GitHub"] }
+    { category: "Ngôn Ngữ", icon: <Code2 size={24}/>, items: ["JavaScript (ES6+)", "C#", "HTML5", "CSS3", "SQL"] },
+    { category: "Frameworks & API", icon: <Layout size={24}/>, items: ["Node.js", "Express.js", "ReactJS", "RESTful API", "Fetch API", "Tailwind CSS"] },
+    { category: "Database & Tools", icon: <Database size={24}/>, items: ["SQL Server", "MySQL", "MongoDB", "Postman", "Git / GitHub", "OpenAI API"] }
   ],
   experience: [
     {
@@ -66,30 +67,55 @@ const PORTFOLIO_DATA = {
       role: "Thực tập sinh IQC",
       period: "06/2025 - 09/2025",
       description: [
-        "Phát hiện lỗi, lập báo cáo bất thường (Bug Report) trên hệ thống quản lý.",
-        "Phối hợp chặt chẽ với đội ngũ sản xuất và kỹ thuật để phân tích nguyên nhân (Root Cause) và xử lý sự cố.",
-        "Tuân thủ quy định an toàn, bảo mật và tiêu chuẩn vận hành (SOP)."
+        "Phát hiện lỗi, lập báo cáo bất thường (Bug Report) và cập nhật/theo dõi tình trạng lỗi trên hệ thống quản lý.",
+        "Phối hợp chặt chẽ với đội ngũ sản xuất và kỹ thuật để phân tích nguyên nhân và xử lý sự cố.",
+        "Tuân thủ tuyệt đối quy định an toàn, bảo mật và tiêu chuẩn vận hành (SOP)."
       ]
     }
   ],
   projects: [
+    {
+      title: "Hệ thống Quản lý & Đặt lịch Phòng khám",
+      period: "01/2026 - 06/2026",
+      role: "Trưởng nhóm (BackEnd)",
+      image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&q=80&w=800",
+      description: "Hệ thống quản lý phòng khám (Clinic Management System) hỗ trợ đặt lịch khám và thanh toán y tế trực tuyến.",
+      details: [
+        "Thiết kế database, xây dựng sơ đồ cơ sở dữ liệu quan hệ (ERD) chặt chẽ trên SQL Server.",
+        "Phát triển RESTful API xử lý các thao tác CRUD và luồng giao tiếp Front-end - Back-end.",
+        "Xây dựng chức năng thanh toán chuẩn quốc tế và bảo mật hệ thống (logic auth, mã hóa Bcrypt).",
+        "Chủ động kiểm thử luồng thanh toán, đăng nhập và tính hợp lý của UI/UX."
+      ],
+      tags: ["Node.js", "Express.js", "SQL Server", "RESTful API", "Bcrypt"],
+      github: "https://github.com/xuanthotong/doanphongkham"
+    },
     {
       title: "English AI",
       period: "12/2025 - Nay",
       role: "Developer",
       image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&q=80&w=800",
       description: "Web App hỗ trợ luyện giao tiếp và sửa lỗi ngữ pháp tiên tiến bằng trí tuệ nhân tạo.",
-      details: ["Xây dựng RESTful API và tích hợp OpenAI API (ChatGPT).", "Lên khung giao diện (UI) bằng ReactJS & Tailwind CSS.", "Thiết kế cơ sở dữ liệu và cấu hình Node.js."],
-      tags: ["ReactJS", "Node.js", "OpenAI API", "Tailwind"]
+      details: [
+        "Khởi tạo dự án, thiết kế cơ sở dữ liệu và cấu hình môi trường Node.js.",
+        "Xây dựng RESTful API và kiểm thử luồng dữ liệu bằng Postman.",
+        "Nghiên cứu phương án tích hợp OpenAI API (ChatGPT) xử lý phân tích ngữ pháp.",
+        "Lên khung giao diện (UI) bằng ReactJS & Tailwind CSS."
+      ],
+      tags: ["Node.js", "MongoDB", "OpenAI API", "ReactJS"]
     },
     {
-      title: "Phần Mềm Bán Hàng",
+      title: "Phần Mềm Quản Lý Bán Hàng",
       period: "01/2025 - 03/2025",
       role: "Trưởng nhóm",
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
-      description: "Ứng dụng desktop hỗ trợ quản lý quy trình bán hàng với C# và hệ quản trị cơ sở dữ liệu MySQL.",
-      details: ["Thiết kế CSDL và cấu hình môi trường ứng dụng.", "Chẩn đoán, khắc phục lỗi kết nối Database.", "Kiểm thử hệ thống với luồng nhập/xuất liên tục."],
-      tags: ["C#", "MySQL", "Desktop App"]
+      description: "Ứng dụng desktop hỗ trợ quản lý quy trình bán hàng và xử lý lượng dữ liệu xuất nhập lớn.",
+      details: [
+        "Thiết kế hệ quản trị cơ sở dữ liệu và cấu hình môi trường chạy.",
+        "Chủ động chẩn đoán, khắc phục lỗi kết nối Database và xung đột phần mềm.",
+        "Kiểm thử hệ thống với luồng nhập/xuất liên tục, đảm bảo phần mềm hoạt động ổn định."
+      ],
+      tags: ["C#", "SQL Server", "MySQL"],
+      github: "https://github.com/xuanthotong/QLBH"
     },
     {
       title: "Ứng dụng Báo Cáo Lỗi",
@@ -97,8 +123,12 @@ const PORTFOLIO_DATA = {
       role: "Tester",
       image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=800",
       description: "Dự án đảm bảo chất lượng phần mềm thông qua quy trình kiểm thử nghiêm ngặt.",
-      details: ["Lên kịch bản kiểm thử cho các luồng CRUD.", "Kiểm thử giao diện và chức năng trên form nhập liệu.", "Sử dụng Postman cho API Testing giữa Front-end và Back-end."],
-      tags: ["Testing", "Postman", "QA/QC"]
+      details: [
+        "Lên kịch bản kiểm thử cho các luồng chức năng CRUD.",
+        "Kiểm thử giao diện và các chức năng trên màn hình form nhập liệu.",
+        "Sử dụng Postman để thực hiện API Testing, kiểm tra tính toàn vẹn dữ liệu giữa FE và BE."
+      ],
+      tags: ["Manual Testing", "API Testing", "Postman"]
     }
   ]
 };
@@ -227,8 +257,7 @@ export default function App() {
                 <div className="space-y-6 text-neutral-400 text-lg leading-relaxed">
                   <p>{PORTFOLIO_DATA.about}</p>
                   <p>
-                    Tôi thích xây dựng những sản phẩm kết hợp giữa thiết kế tối ưu và hiệu suất vượt trội. 
-                    Mỗi dòng code là một cơ hội để tôi học hỏi và hoàn thiện kỹ năng của mình.
+                    Tôi luôn thích kiến trúc hóa các hệ thống kết hợp giữa Database vững chắc và API tối ưu. Mỗi dòng code Backend đối với tôi là một cơ hội để học hỏi và hoàn thiện khả năng xử lý nghiệp vụ phức tạp.
                   </p>
                 </div>
               </Reveal>
@@ -292,7 +321,6 @@ export default function App() {
               {PORTFOLIO_DATA.experience.map((exp, index) => (
                 <Reveal key={index} delay={200}>
                   <div className="relative pl-8 md:pl-0">
-                    {/* Timeline line for mobile */}
                     <div className="md:hidden absolute left-0 top-0 bottom-0 w-px bg-neutral-800"></div>
                     <div className="md:hidden absolute left-[-4px] top-2 w-2 h-2 rounded-full bg-cyan-400 ring-4 ring-neutral-950"></div>
                     
@@ -358,11 +386,21 @@ export default function App() {
                         </ul>
                       </div>
 
-                      <div className={`flex flex-wrap gap-3 text-sm font-mono text-neutral-400 ${index % 2 === 0 ? 'md:justify-end' : 'md:justify-start'}`}>
+                      <div className={`flex flex-wrap gap-3 text-sm font-mono text-neutral-400 mb-4 ${index % 2 === 0 ? 'md:justify-end' : 'md:justify-start'}`}>
                         {project.tags.map((tag, i) => (
                           <span key={i}>{tag}</span>
                         ))}
                       </div>
+
+                      {/* Nút Github động */}
+                      {project.github && (
+                        <div className={`flex ${index % 2 === 0 ? 'md:justify-end' : 'md:justify-start'}`}>
+                          <a href={project.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors text-sm font-bold bg-cyan-500/10 px-4 py-2 rounded-full border border-cyan-500/20">
+                            <Github size={16} /> Xem Source Code
+                          </a>
+                        </div>
+                      )}
+
                     </div>
                   </div>
                 </Reveal>
@@ -378,36 +416,46 @@ export default function App() {
               <h2 className="text-cyan-400 font-mono text-lg mb-4">05. Có Gì Tiếp Theo?</h2>
               <h3 className="text-4xl md:text-5xl font-bold text-white mb-6">Kết Nối Với Tôi</h3>
               <p className="text-neutral-400 text-lg mb-12">
-                Tôi luôn cởi mở với những cơ hội hợp tác mới. Nếu bạn có một dự án thú vị, một câu hỏi, hoặc chỉ muốn gửi lời chào, hộp thư của tôi luôn mở!
+                Tôi luôn cởi mở với những cơ hội hợp tác mới để phát triển các hệ thống phần mềm. Nếu bạn có một dự án thú vị, một câu hỏi, hoặc chỉ muốn gửi lời chào, hộp thư của tôi luôn mở!
               </p>
               
               <a 
                 href={`https://mail.google.com/mail/?view=cm&fs=1&to=${PORTFOLIO_DATA.contact.email}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-4 border-2 border-cyan-500 text-cyan-400 rounded-md font-bold hover:bg-cyan-500/10 transition-colors"
+                className="inline-flex items-center gap-2 px-8 py-4 border-2 border-cyan-500 text-cyan-400 rounded-md font-bold hover:bg-cyan-500/10 transition-colors mb-12"
               >
                 <Mail size={20} />
                 Gửi Email Cho Tôi
               </a>
 
-              <div className="mt-20 flex flex-col md:flex-row justify-center items-center gap-6 text-neutral-400">
-              <div className="flex items-center gap-2 hover:text-cyan-400 transition-colors">
-                <Phone size={18} />
-                <span>{PORTFOLIO_DATA.contact.phone}</span>
+              <div className="flex flex-col md:flex-row justify-center items-center gap-6 text-neutral-400">
+                <div className="flex items-center gap-2">
+                  <Phone size={18} className="text-cyan-400"/>
+                  <span>{PORTFOLIO_DATA.contact.phone}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <MapPin size={18} className="text-cyan-400"/>
+                  <span>{PORTFOLIO_DATA.contact.location}</span>
+                </div>
               </div>
-              <div className="flex items-center gap-2 hover:text-cyan-400 transition-colors">
-                <MapPin size={18} />
-                <span>{PORTFOLIO_DATA.contact.location}</span>
+
+              {/* Mạng Xã Hội */}
+              <div className="flex justify-center items-center gap-6 mt-8">
+                <a href={PORTFOLIO_DATA.contact.github} target="_blank" rel="noopener noreferrer" className="p-3 bg-neutral-900 border border-neutral-800 rounded-full hover:border-cyan-400 hover:text-cyan-400 transition-colors">
+                  <Github size={24} />
+                </a>
+                <a href={PORTFOLIO_DATA.contact.facebook} target="_blank" rel="noopener noreferrer" className="p-3 bg-neutral-900 border border-neutral-800 rounded-full hover:border-cyan-400 hover:text-cyan-400 transition-colors">
+                  <Facebook size={24} />
+                </a>
               </div>
-            </div>
-          </Reveal>
-        </div>
-      </section>
+            </Reveal>
+          </div>
+        </section>
 
-    </main>
+      </main>
 
-    {/* Footer */}
+      {/* Footer */}
       <footer className="py-6 text-center text-neutral-500 text-sm font-mono relative z-10 border-t border-neutral-900">
         <p>Thiết kế & Lập trình bởi <span className="text-cyan-500">{PORTFOLIO_DATA.name}</span> &copy; 2026</p>
       </footer>
